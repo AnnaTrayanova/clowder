@@ -1,6 +1,8 @@
+#include <iostream>
+#include "snake.h"
+#include <QApplication> 
 #include "window.h"
-#include <QApplication>
-#include "borders.cpp"
+
 
 int main(int argc, char *argv[])
 {

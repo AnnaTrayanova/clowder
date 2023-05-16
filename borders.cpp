@@ -2,7 +2,7 @@
 #include <QPainter>
 #include <QKeyEvent>
 
-MainWindow::MainWindow() : sq(0, 0, 20, 20), dir(20, 0)
+MainWindow::MainWindow() : sq(0, 0, 10, 10), dir(10, 0)
 {
     setFixedSize(480, 320);
     connect(&ticker, &QTimer::timeout, this, &MainWindow::onTick);
@@ -21,18 +21,18 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     {
     case Qt::Key_Down:
         dir.setX(0);
-        dir.setY(20);
+        dir.setY(10);
         break;
     case Qt::Key_Up:
         dir.setX(0);
-        dir.setY(-20);
+        dir.setY(-10);
         break;
     case Qt::Key_Left:
-        dir.setX(-20);
+        dir.setX(-10);
         dir.setY(0);
         break;
     case Qt::Key_Right:
-        dir.setX(20);
+        dir.setX(10);
         dir.setY(0);
         break;
 
