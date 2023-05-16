@@ -1,0 +1,4 @@
+C:/Users/Acer/Desktop/vs code stuff/clowder/build/CMakeFiles/CLOWDER.dir
+C:/Users/Acer/Desktop/vs code stuff/clowder/build/CMakeFiles/edit_cache.dir
+C:/Users/Acer/Desktop/vs code stuff/clowder/build/CMakeFiles/rebuild_cache.dir
+C:/Users/Acer/Desktop/vs code stuff/clowder/build/CMakeFiles/CLOWDER_autogen.dir
