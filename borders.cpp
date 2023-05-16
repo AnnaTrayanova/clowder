@@ -14,7 +14,7 @@ void MainWindow::paintEvent(QPaintEvent *event)
     QPainter p(this);
     p.setBrush(Qt::black);
     p.drawRect(sq);
-    // hi
+    
 }
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
