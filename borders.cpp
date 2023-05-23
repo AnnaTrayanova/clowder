@@ -42,6 +42,32 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     }
 }
 
+void MainWindow::keyPressEvent(QKeyEvent *event)
+{
+    switch (event->key())
+    {
+    case Qt::Key_S:
+        dir.setX(0);
+        dir.setY(10);
+        break;
+    case Qt::Key_W:
+        dir.setX(0);
+        dir.setY(-10);
+        break;
+    case Qt::Key_D:
+        dir.setX(-10);
+        dir.setY(0);
+        break;
+    case Qt::Key_A:
+        dir.setX(10);
+        dir.setY(0);
+        break;
+
+    default:
+        break;
+    }
+}
+
 void MainWindow::onTick()
 {
     sq.translate(dir);
