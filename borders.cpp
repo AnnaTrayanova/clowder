@@ -1,12 +1,20 @@
-#include "window.h"
+#include "borders.h"
 #include <QPainter>
 #include <QKeyEvent>
+#include <QTimer>
 
 MainWindow::MainWindow() : sq(0, 0, 10, 10), dir(10, 0)
 {
     setFixedSize(480, 320);
     connect(&ticker, &QTimer::timeout, this, &MainWindow::onTick);
     ticker.start(500);
+
+    babaFront1.load(babaFront1.png);    //tykaaaa???
+    babaFront2.load(babaFront2.png);
+    babaFront3.load(babaFront3.png);
+
+    imageLabel = new QLabel(this);
+    imageLabel->setGeometry(0, 0, 480, 320);
 }
 
 void MainWindow::paintEvent(QPaintEvent *event)
@@ -16,6 +24,15 @@ void MainWindow::paintEvent(QPaintEvent *event)
     p.drawRect(sq);
     
 }
+
+private:
+    QLabel* images;
+    QImage babaFront1;
+    QImage babaFront2;
+    QImage babaFront3;
+    bool isRotationStarted;
+    int rotationCounter;
+
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
     switch (event->key())
