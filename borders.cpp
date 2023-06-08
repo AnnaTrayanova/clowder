@@ -2,6 +2,8 @@
 #include <QPainter>
 #include <QKeyEvent>
 #include <QTimer>
+#include <QLabel>
+#include <QImage>
 
 MainWindow::MainWindow() : sq(0, 0, 10, 10), dir(10, 0)
 {
@@ -9,9 +11,9 @@ MainWindow::MainWindow() : sq(0, 0, 10, 10), dir(10, 0)
     connect(&ticker, &QTimer::timeout, this, &MainWindow::onTick);
     ticker.start(500);
 
-    babaFront1.load(babaFront1.png);    //tykaaaa???
-    babaFront2.load(babaFront2.png);
-    babaFront3.load(babaFront3.png);
+babaFront1.load("babaFront1.png");
+babaFront2.load("babaFront2.png");
+babaFront3.load("babaFront3.png");
 
     imageLabel = new QLabel(this);
     imageLabel->setGeometry(0, 0, 480, 320);
