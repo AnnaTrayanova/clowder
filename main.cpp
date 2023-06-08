@@ -1,6 +1,7 @@
 #include <iostream>
-#include "snake.h"
+#include <windows.h>
 #include <QApplication> 
+#include "snake.h"
 #include "borders.h"
 
 
@@ -10,6 +11,4 @@ int main(int argc, char *argv[])
     MainWindow window;
     window.show();
     return app.exec();
-
-    // testing some stuff
 }
