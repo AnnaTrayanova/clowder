@@ -29,9 +29,9 @@ void MainWindow::paintEvent(QPaintEvent *event)
 
 private:
     QLabel* images;
-    QImage babaFront1;
-    QImage babaFront2;
-    QImage babaFront3;
+    QImage babaFront1;//da iztria li tova????
+    QImage babaFront2;//v smsl
+    QImage babaFront3;//tezi trite?
     bool isRotationStarted;
     int rotationCounter;
 
