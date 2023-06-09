@@ -2,8 +2,6 @@
 #define SNAKE_H
 
 #include <iostream>
-#include <conio.h>
-#include <windows.h>
 #include <string>
 using namespace std;
 
@@ -11,13 +9,14 @@ class SnakeGame
 {
 public:
     SnakeGame();
-    ~SnakeGame();
+    //~SnakeGame();
     void Run();
+
 private:
     // game settings
     const int width;
     const int height;
-    int x, y, fruitX, fruitY, score;
+    int x, y, catX, catY, score;
     int tailX[100], tailY[100];
     int nTail;
     enum eDirection { STOP = 0, LEFT, RIGHT, UP, DOWN };

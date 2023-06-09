@@ -1,5 +1,9 @@
-#pragma once
-
+//#pragma once
+#ifndef WINDOW_H
+#define WINDOW_H
+#include <QImage>
+#include <QLabel>
+#include <QKeyEvent>
 #include <QWidget>
 #include <QTimer>
 
@@ -20,4 +24,12 @@ private:
     QTimer ticker;
     QRect sq;
     QPoint dir;
+    QLabel *imagesLabel;
+    QImage babaFront1;
+    QImage babaFront2;
+    QImage babaFront3;
+    // bool isRotationStarted;
+    // int rotationCounter;
+
 };
+#endif

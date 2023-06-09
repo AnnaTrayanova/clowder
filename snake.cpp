@@ -1,46 +1,3 @@
-#ifndef SNAKE_H
-#define SNAKE_H
-
-#include <iostream>
-#include <conio.h>
-#include <windows.h>
-#include <string>
-using namespace std;
-
-class SnakeGame
-{
-public:
-    SnakeGame();
-    ~SnakeGame();
-    void Run();
-private:
-    // game settings
-    const int width;
-    const int height;
-    int x, y, fruitX, fruitY, score;
-    int tailX[100], tailY[100];
-    int nTail;
-    enum eDirection { STOP = 0, LEFT, RIGHT, UP, DOWN };
-    eDirection dir;
-
-    // image display variables
-    const string imageName;
-    HANDLE hImage;
-    int imageWidth, imageHeight;
-
-    // function prototypes
-    void Draw();
-    void Setup();
-    void Input();
-    void Logic();
-    void ShowImage();
-};
-
-#endif
- 
-// snake.cpp
-
-
 #include "snake.h"
 
 SnakeGame::SnakeGame()
@@ -50,8 +7,8 @@ SnakeGame::SnakeGame()
     dir = STOP;
     x = width / 2;
     y = height / 2;
-    fruitX = rand() % width;
-    fruitY = rand() % height;
+    catX = rand() % width;
+    catY = rand() % height;
     score = 0;
     nTail = 0;
 
@@ -94,64 +51,6 @@ void SnakeGame::Run()
     }
 }
 
-void SnakeGame::Draw()
-{
-    system("cls");
-    for (int i = 0; i < width + 2; i++)
-        cout << "#";
-    cout << endl;
-
-    for (int i = 0; i < height; i++)
-    {
-        for (int j = 0; j < width; j++)
-        {
-            if (j == 0)
-                cout << "#";
-            if (i == y && j == x)
-                cout << "O";
-            else if (i == fruitY && j == fruitX)
-                cout << "F";
-            else
-            {
-                bool print = false;
-                for (int k = 0; k < nTail; k++)
-                {
-                    if (tailX[k] == j && tailY[k] == i)
-                    {
-                        cout << "o";
-                        print = true;
-                    }
-                }
-                if (!print)
-                 void SnakeGame::Setup()
-{
-    srand(time(NULL));
-}
-
-void SnakeGame::Input()
-{
-    if (_kbhit())
-    {
-        switch (_getch())
-        {
-        case 'a':
-            dir = LEFT;
-            break;
-        case 'd':
-            dir = RIGHT;
-            break;
-        case 'w':
-            dir = UP;
-            break;
-        case 's':
-            dir = DOWN;
-            break;
-        case 'x':
-            exit(0);
-        }
-    }
-}
-
 void SnakeGame::Logic()
 {
     // update tail positions
@@ -169,23 +68,15 @@ void SnakeGame::Logic()
         prevX = prev2X;
         prevY = prev2Y;
     }
+}
+    void SnakeGame::ShowImage()
+{
+    // Code for displaying image using Windows GDI functions
+    // You can replace this with your preferred method of image display
+    // ...
+}
 
-    // update head position
-    switch (dir)
-    {
-    case LEFT:
-        x--;
-        break;
-    case RIGHT:
-        x++;
-        break;
-    case UP:
-        y--;
-        break;
-    case DOWN:
-        y++;
-        break;
-    default:
-        break;
-    } 
+void SnakeGame::Setup()
+{
+    srand(time(NULL));
 }

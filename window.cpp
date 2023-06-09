@@ -1,9 +1,7 @@
-#include "borders.h"
 #include <QPainter>
 #include <QKeyEvent>
-#include <QTimer>
-#include <QLabel>
-#include <QImage>
+#include "window.h"
+
 
 MainWindow::MainWindow() : sq(0, 0, 10, 10), dir(10, 0)
 {
@@ -17,23 +15,39 @@ babaFront3.load("babaFront3.png");
 
     imageLabel = new QLabel(this);
     imageLabel->setGeometry(0, 0, 480, 320);
+
+    isRotationStarted = false;
+    rotationCounter = 0;
 }
 
 void MainWindow::paintEvent(QPaintEvent *event)
 {
     QPainter p(this);
-    p.setBrush(Qt::black);
-    p.drawRect(sq);
-    
+
+     // Calculate the current frame based on the elapsed time
+    int frame = (QDateTime::currentMSecsSinceEpoch() / 250) % 3;
+
+    // Display the current frame image
+    switch (frame)
+    {
+        case 0:
+            p.drawImage(sq, babaFront1);
+            break;
+        case 1:
+            p.drawImage(sq, babaFront2);
+            break;
+        case 2:
+            p.drawImage(sq, babaFront3);
+            break;
+    }
 }
 
-private:
-    QLabel* images;
-    QImage babaFront1;//da iztria li tova????
-    QImage babaFront2;//v smsl
-    QImage babaFront3;//tezi trite?
-    bool isRotationStarted;
-    int rotationCounter;
+void MainWindow::onTick()
+{
+    sq.translate(dir);
+    isRotationStarted = true;
+    update();
+}
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
@@ -52,32 +66,6 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
         dir.setY(0);
         break;
     case Qt::Key_Right:
-        dir.setX(10);
-        dir.setY(0);
-        break;
-
-    default:
-        break;
-    }
-}
-
-void MainWindow::keyPressEvent(QKeyEvent *event)
-{
-    switch (event->key())
-    {
-    case Qt::Key_S:
-        dir.setX(0);
-        dir.setY(10);
-        break;
-    case Qt::Key_W:
-        dir.setX(0);
-        dir.setY(-10);
-        break;
-    case Qt::Key_D:
-        dir.setX(-10);
-        dir.setY(0);
-        break;
-    case Qt::Key_A:
         dir.setX(10);
         dir.setY(0);
         break;

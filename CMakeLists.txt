@@ -6,7 +6,7 @@ find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets)
 
 qt_standard_project_setup()
 
-qt_add_executable(CLOWDER main.cpp snake.cpp)
+qt_add_executable(CLOWDER main.cpp snake.cpp window.cpp)
 
 set_target_properties(CLOWDER PROPERTIES
     WIN32_EXECUTABLE TRUE

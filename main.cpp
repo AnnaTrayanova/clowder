@@ -1,9 +1,8 @@
 #include <iostream>
 #include <QApplication>
-#include "conio.h"
+#include <conio.h>
 #include "snake.h"
 #include "window.h"
-
 
 int main(int argc, char *argv[])
 {
