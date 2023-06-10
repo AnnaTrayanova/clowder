@@ -24,7 +24,7 @@ private:
     QTimer ticker;
     QRect sq;
     QPoint dir;
-    QLabel *imagesLabel;
+    QLabel *imageLabel;
     QImage babaFront1;
     QImage babaFront2;
     QImage babaFront3;

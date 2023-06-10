@@ -74,9 +74,3 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
         break;
     }
 }
-
-void MainWindow::onTick()
-{
-    sq.translate(dir);
-    update();
-}
