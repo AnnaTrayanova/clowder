@@ -2,6 +2,8 @@
 #define SNAKE_H
 
 #include <iostream>
+#include <conio.h>
+#include <windows.h>
 #include <string>
 using namespace std;
 
@@ -9,7 +11,6 @@ class SnakeGame
 {
 public:
     SnakeGame();
-    //~SnakeGame();
     void Run();
 
 private:

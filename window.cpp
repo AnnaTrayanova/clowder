@@ -27,7 +27,7 @@ void MainWindow::paintEvent(QPaintEvent *event)
      // Calculate the current frame based on the elapsed time
     int frame = (QDateTime::currentMSecsSinceEpoch() / 250) % 3;
 
-    // Display the current frame image
+    // show the current frame image
     switch (frame)
     {
         case 0:

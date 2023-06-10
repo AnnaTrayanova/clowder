@@ -12,7 +12,7 @@ SnakeGame::SnakeGame()
     score = 0;
     nTail = 0;
 
-    // initialize image display variables
+   /* // initialize image display variables
     hImage = LoadImage(NULL, imageName.c_str(), IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
     if (hImage == NULL)
     {
@@ -22,14 +22,14 @@ SnakeGame::SnakeGame()
     BITMAP bmp;
     GetObject(hImage, sizeof(bmp), &bmp);
     imageWidth = bmp.bmWidth;
-    imageHeight = bmp.bmHeight;
+    imageHeight = bmp.bmHeight;*/
 }
 
-SnakeGame::~SnakeGame()
+/*SnakeGame::~SnakeGame()
 {
     // release image resources
     DeleteObject(hImage);
-}
+}*/
 
 void SnakeGame::Run()
 {
@@ -38,7 +38,6 @@ void SnakeGame::Run()
     {
         // draw game board and image
         Draw();
-        ShowImage();
 
         // handle player input
         Input();
