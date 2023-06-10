@@ -179,6 +179,15 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//The directory containing a CMake configuration file for Qt5.
+Qt5_DIR:PATH=Qt5_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for Qt6.5.0.
+Qt6.5.0_DIR:PATH=Qt6.5.0_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for Qt6.5.
+Qt6.5_DIR:PATH=Qt6.5_DIR-NOTFOUND
+
 //The directory containing a CMake configuration file for Qt6.
 Qt6_DIR:PATH=Qt6_DIR-NOTFOUND
 
