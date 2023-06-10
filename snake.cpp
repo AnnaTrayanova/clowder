@@ -3,7 +3,7 @@
 SnakeGame::SnakeGame()
     : width(20), height(20), imageName("snake.bmp")
 {
-    // initialize game settings
+    // game settings
     dir = STOP;
     x = width / 2;
     y = height / 2;
@@ -15,19 +15,19 @@ SnakeGame::SnakeGame()
 
 void SnakeGame::Run()
 {
-    // game loop
+    // game goooo
     while (true)
     {
-        // draw game board and image
+        // do it draw the game board
         Draw();
 
-        // handle player input
+        // player input 
         Input();
 
-        // update game state
+        // update it dumb code
         Logic();
 
-        // wait before updating game state again
+        // wait 
         Sleep(50);
     }
 }
@@ -52,8 +52,8 @@ void SnakeGame::Logic()
 }
     void SnakeGame::ShowImage()
 {
-    // Code for displaying image using Windows GDI functions
-    // You can replace this with your preferred method of image display
+    // display image with google
+
     // ...
 }
 
